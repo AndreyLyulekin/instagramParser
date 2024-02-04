@@ -29,7 +29,7 @@ const wait = (milliseconds) => {
   const followersNamesList = document.getElementsByClassName('_aano');
 
   //имитируем прокрутку и получаем большой список пользователей
-  await wait(3000); // ожидаем 3 секунды
+  await wait(3000); // ожидаем 3 секунды загрузки попапа с поьзователями
 
   //список с прокруткой
   const listForScroll = followersNamesList[0];
@@ -38,7 +38,7 @@ const wait = (milliseconds) => {
     scrollToBottom(listForScroll);
   }, 1000);
 
-  await wait(10000); // ожидаем 10 секунд
+  await wait(100_000); // время скролла
 
   //вырубаем интервал
   clearInterval(interval);
@@ -59,5 +59,5 @@ const wait = (milliseconds) => {
     arrNames.push(userName);
   });
 
-  console.log(arrNames);
+  console.log(Array.from(arrNames));
 })();
